@@ -1,0 +1,14 @@
+body{
+    background: #ddd;
+    color:#333;
+    padding-top: 5%;
+    margin-left: 10%;
+}
+
+h1 {
+    font-weight:bold;
+}
+
+.examples{
+    margin-top: 4%;
+}

@@ -1,10 +1,15 @@
 var express = require("express");
+
 var app = express();
+var timestampController = require('./controllers/timestampController');
 
-app.get('/', function (req, res) {
-  res.send('Hello World');
-});
+//static files in 'view' folder
+app.use(express.static(__dirname + '/view'));
 
+//fire controller
+timestampController(app);
+
+//listen to port 8080
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
