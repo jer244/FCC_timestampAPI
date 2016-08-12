@@ -15,9 +15,10 @@ app.get('/:id', function (req, res) {
    
     //if not at number, check if string is a valid date and output accordingly
     if (isNaN(inputDate)){
-	     if(moment(inputDate).isValid(true)){
+	     if(moment(inputDate, 'MMM DD YYYY').isValid()){
 	      var unixDate = Math.round((new Date(inputDate).getTime())/1000);
-	      res.json({"unix": unixDate, "natural": inputDate});
+	      var formattedDate = moment(inputDate).format("MMMM D, YYYY");
+	      res.json({"unix": unixDate, "natural": formattedDate});
 	     }else{
 	          res.json({"unix": null, "natural": null});
 	     }
