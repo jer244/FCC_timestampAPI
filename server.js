@@ -10,6 +10,6 @@ app.use(express.static(__dirname + '/view'));
 timestampController(app);
 
 //listen to port 8080
-app.listen(process.env.PORT || <default PORT>, function(){
+app.listen(process.env.PORT, function(){
 console.log('Listening to default PORT')
 });
